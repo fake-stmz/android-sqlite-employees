@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             },
             onLongClick = { employee ->
-                // Подтверждение удаления
+                // Подтверждение удаления при помощи диалога
                 AlertDialog.Builder(this)
                     .setTitle("Удаление")
                     .setMessage("Удалить сотрудника?")
@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         loadData()
     }
 
+    // Загрузка всех записей из БД
     private fun loadData() {
         val employees = db.getAllEmployees()
         adapter.updateList(employees)
