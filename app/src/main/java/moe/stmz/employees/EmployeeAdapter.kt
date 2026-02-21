@@ -29,6 +29,7 @@ class EmployeeAdapter(
 
         holder.binding.tvName.text = employee.name
         holder.binding.tvPosition.text = employee.position
+        holder.binding.tvDepartment.text = employee.department
         holder.binding.tvSalary.text = "ЗП: ${employee.salary}"
 
         // Обработка нажатия (probably для редактирования)

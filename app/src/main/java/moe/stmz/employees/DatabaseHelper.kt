@@ -35,7 +35,7 @@ class DatabaseHelper(context: Context) :
             put("name", employee.name)
             put("position", employee.position)
             put("department", employee.department)
-            put("salary", employee.name)
+            put("salary", employee.salary)
         }
         db.insert("employees", null, values)
         db.close()
@@ -99,7 +99,7 @@ class DatabaseHelper(context: Context) :
             put("name", employee.name)
             put("position", employee.position)
             put("department", employee.department)
-            put("salary", employee.name)
+            put("salary", employee.salary)
         }
 
         db.update("employees", values, "id = ?", arrayOf(employee.id.toString()))
