@@ -5,5 +5,5 @@ data class Employee(
     val name: String,
     val position: String,
     val department: String,
-    val salary:
+    val salary: Double
 )
