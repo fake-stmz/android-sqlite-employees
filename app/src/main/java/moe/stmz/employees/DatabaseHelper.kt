@@ -41,7 +41,7 @@ class DatabaseHelper(context: Context) :
         db.close()
     }
 
-    // R - Получение всех сотрудников
+    // R1 - Получение всех сотрудников
     fun getAllEmployees() : List<Employee> {
         val list = mutableListOf<Employee>()
         val db = readableDatabase
@@ -64,6 +64,32 @@ class DatabaseHelper(context: Context) :
         db.close()
 
         return list
+    }
+
+    // R2 - Получение конкретного сотрудника
+    fun getEmployee(id: Int) : Employee? {
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT * FROM employees WHERE id=?",
+            arrayOf(id.toString())
+        )
+
+        var employee: Employee? = null
+
+        if (cursor.moveToFirst()) {
+            employee = Employee(
+                id = cursor.getInt(0),
+                name = cursor.getString(1),
+                position = cursor.getString(2),
+                department = cursor.getString(3),
+                salary = cursor.getDouble(4)
+            )
+        }
+
+        cursor.close()
+        db.close()
+
+        return employee
     }
 
     // U - Обновление информации о сотруднике
