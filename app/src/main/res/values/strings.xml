@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Employees</string>
+    <string name="name">Имя</string>
+    <string name="position">Должность</string>
+    <string name="department">Отдел</string>
+    <string name="salary">Зарплата</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отменить</string>
 </resources>
